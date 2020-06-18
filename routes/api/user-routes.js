@@ -21,11 +21,11 @@ router.get('/:id', (req, res) => {
         where: {
           id: req.params.id
         },
-        // include: [
-        //   {
-        //     model: Post,
-        //     attributes: ['id', 'title', 'post_content', 'created_at']
-        //   },
+        include: [
+          {
+            model: Post,
+            attributes: ['id', 'title', 'post_content', 'created_at']
+          },
         //   // include the Comment model here:
         //   {
         //     model: Comment,
@@ -35,7 +35,7 @@ router.get('/:id', (req, res) => {
         //       attributes: ['title']
         //     }
         //   },
-        // ]
+        ]
       })
     .then(dbUserData => {
         if (!dbUserData) {
