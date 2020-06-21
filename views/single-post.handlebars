@@ -1,16 +1,5 @@
 {{!-- Display post --}}
-<article class="post">
-    <div class="title">
-        <h3>{{title}}</h3>
-        <p>{{post_content}}</p>
-    </div>
-  <div class="meta">
-    Posted by {{user.username}} on
-    {{post.created_at}}
-    |
-    <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
-  </div>
-</article>
+{{> post-info post}}
 
 {{!-- Add comment form --}}
 {{#if loggedIn}}
